@@ -44,6 +44,9 @@ export default class CustomerJourneyWidget extends LitElement {
   @property({ type: String, attribute: "base-url" }) baseURL:
     | string
     | undefined = undefined;
+  @property({ type: String, attribute: "base-stream-url" }) streamUrl:
+    | string
+    | undefined = undefined;
   @property({ type: String }) customer: string | null = null;
   @property({ type: String, attribute: "tape-token" }) tapeToken:
     | string
@@ -177,16 +180,8 @@ export default class CustomerJourneyWidget extends LitElement {
 
     this.baseUrlCheck();
     if (this.streamToken) {
-      const header: EventSourceInitDict = {
-        headers: {
-          "content-type": "application/json; charset=UTF-8",
-          accept: "application/json",
-          Authorization: `SharedAccessSignature ${this.streamToken}`
-        }
-      };
       this.eventSource = new EventSource(
-        `${this.baseURL}/v1/journey/streams/${this.customer}?${this.streamToken}`,
-        header
+        `${this.streamUrl}/v1/journey/streams/${this.customer}?${this.streamToken}`
       );
     }
 
