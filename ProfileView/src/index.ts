@@ -182,7 +182,6 @@ export default class CjaasProfileWidget extends LitElement {
     let url = this.tapeReadToken?.replace(/sig=(.*)/, (...matches) => {
       return "sig=" + encodeURIComponent(matches[1]);
     });
-    debugger;
     if (this.filter) {
       url += `&$filter=${this.filter}`;
     }
