@@ -15,7 +15,7 @@ import { sampleTemplate } from "./sandbox.mock";
 @customElement("cjaas-component-sandbox")
 export class Sandbox extends LitElement {
   @internalProperty() darkTheme = false;
-  @internalProperty() containerWidth = "1000px";
+  @internalProperty() containerWidth = "600px";
   @internalProperty() containerHeight = "80vh";
   @internalProperty() selectedComponent = "Activity Item";
   static get styles() {
@@ -90,13 +90,14 @@ export class Sandbox extends LitElement {
           >
             <cjaas-profile-view-widget
               id="view"
-              customer="560021-Venki"
+              customer="98126-Kevin"
               .template=${sampleTemplate}
-              profile-read-token="so=demoassure&sn=sandbox&ss=profile&sp=r&se=2022-06-17T23:47:34.409Z&sk=sandbox&sig=61BLCJ5+vZtOOvut/7khUQyg0N9KlvbPrJWrYa9lf28="
+              tape-read-token="so=demoassure&sn=sandbox&ss=tape&sp=r&se=2022-06-16T19:11:33.176Z&sk=sandbox&sig=7G8UdEipQHnWOV3hRbTqkNxxjQNHkkQYGDlCrgEhK0k="
               profile-write-token="so=demoassure&sn=sandbox&ss=profile&sp=w&se=2022-06-17T21:36:08.050Z&sk=sandbox&sig=gm/XQ+jtu8uWPrUtpRfR6P4DHwrJV2CJokIH3BcgzdE="
               stream-token="so=demoassure&sn=sandbox&ss=stream&sp=r&se=2022-06-17T19:18:05.538Z&sk=sandbox&sig=nJOri1M66leDMnfL93UlufHegDf3hAwoQ/Mj37ReQBs="
               timelineType="journey-and-stream"
               base-url="https://uswest-nonprod.cjaas.cisco.com"
+              base-stream-url="https://cjaas-devus1.azurewebsites.net"
               ></cjaas-profile-view-widget>
             </div>
             <div
@@ -105,7 +106,7 @@ export class Sandbox extends LitElement {
             >
             <cjaas-profile-view-widget
               id="view"
-              customer="560021-Venki"
+              customer="98126-Kevin"
               .template=${sampleTemplate}
               timelineType="journey-and-stream"
               base-url="https://uswest-nonprod.cjaas.cisco.com"

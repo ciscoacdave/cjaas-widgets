@@ -182,7 +182,7 @@ export default class CjaasProfileWidget extends LitElement {
     let url = this.tapeReadToken?.replace(/sig=(.*)/, (...matches) => {
       return "sig=" + encodeURIComponent(matches[1]);
     });
-
+    debugger;
     if (this.filter) {
       url += `&$filter=${this.filter}`;
     }
@@ -217,7 +217,7 @@ export default class CjaasProfileWidget extends LitElement {
     this.baseUrlCheck();
     // gets historic journey
     fetch(
-      `${this.baseURL}/v1/journey/events?${this.getTimelineAPIQueryParams(
+      `${this.baseURL}/v1/journey/events/${this.customer}?${this.getTimelineAPIQueryParams(
         true
       )}`,
       {
@@ -249,10 +249,9 @@ export default class CjaasProfileWidget extends LitElement {
 
     this.baseUrlCheck();
     if (this.streamReadToken === null) {
-      debugger;
     }
     this.eventSource = new EventSource(
-      `${this.baseURL}/v1/journey/streams?${this.streamReadToken}`
+      `${this.baseStreamURL}/v1/journey/streams/${this.customer}?${this.streamReadToken}`
     );
     // @ts-ignore
     this.eventSource.onmessage = (event: ServerSentEvent) => {
@@ -383,7 +382,6 @@ export default class CjaasProfileWidget extends LitElement {
     // tab data should return the event as such.. Should be rendered by stream component.
     const tabs = this.profile.filter((x: any) => x.query.type === "tab");
     // TODO: Track the selected tab to apply a class to the badge for color synching, making blue when selected
-    debugger;
     const activityTab =
       this.profileReadToken || this.profileWriteToken
         ? html`
