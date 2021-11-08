@@ -89,11 +89,11 @@ export class Sandbox extends LitElement {
           >
             <cjaas-timeline-widget
               id="timeline-widget"
-              person-id="30313-Carl"
-              tape-read-token=${tapeRead}
-              stream-read-token=${stream}
+              person-id="David"
+              tape-read-token="so=2a0dd1fc-0aa5-4713-b28e-e7a550c39b8d&amp;sn=sandbox&amp;ss=tape&amp;sp=r&amp;se=2022-01-30T03:46:32.985Z&amp;sk=dafreitaBBY&amp;sig=WHOMjjTu7UeHkZNu04LqoBjC0dObRuZsypJdasYBFFM%3D"
+              stream-read-token="so=2a0dd1fc-0aa5-4713-b28e-e7a550c39b8d&amp;sn=sandbox&amp;ss=stream&amp;sp=r&amp;se=2022-01-30T03:50:19.358Z&amp;sk=dafreitaBBY&amp;sig=5ymHCq3s1UcH96AF1hzu6WJwusCxMEIoUI9tYQ%2Bv%2BzY%3D"
               limit="15"
-              base-url=${baseURL}
+              base-url="https://uswest-nonprod.cjaas.cisco.com"
             ></cjaas-timeline-widget>
           </div>
           <div
